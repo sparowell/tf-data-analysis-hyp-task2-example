@@ -5,5 +5,5 @@ from scipy.stats import ks_2samp
 chat_id = 654929803 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
-    p = ks_2samp(x, y, alternative="two-sided").pvalue
-    return p < 0.01 # Ваш ответ, True или False
+    p = cramervonmises_2samp(x, y).pvalue # Это как раз CVM
+    return p <= 0.01 
